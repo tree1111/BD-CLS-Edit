@@ -5,4 +5,4 @@ This repository contains the code for the paper "[Counterfactual Image Editing w
 ---
 ## 📦 Code Release
 
-The BD-CLS-Edit implementation and dataset construction pipeline will be released soon. 
+The BD-CLS-Edit implementation and dataset construction pipeline are coming soon. 
