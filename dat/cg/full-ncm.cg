@@ -1,0 +1,11 @@
+<NODES>
+D
+C
+BC
+BW
+
+<EDGES>
+D <-> C
+D -> BW
+C -> BW
+C -> BC
