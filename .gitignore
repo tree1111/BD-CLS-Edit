@@ -1,4 +1,6 @@
 .idea/
 /out/
-/dat/img/
+/dat/img/MNIST/
+/dat/img/ColoredBarMNIST/
 *.out
+/imgs

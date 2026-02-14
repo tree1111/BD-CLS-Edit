@@ -9,6 +9,7 @@ import torch
 from torchvision import transforms
 from torchvision import datasets
 
+import argparse
 import pandas as pd
 
 def gen_scm(cg, n):
@@ -151,13 +152,17 @@ class ColoredBarMNIST(datasets.VisionDataset):
 
 
 if __name__ == "__main__":
+    args = argparse.ArgumentParser()
+    args.add_argument('--data-path', type=str, default='../../dat/img', help='data path')
+    args = args.parse_args()
     cg = 'full-ncm'
-    ColoredBarMNIST(cg=cg, root='../../dat/img', ow=False)
+
+    ColoredBarMNIST(cg=cg, root=args.data_path, ow=True)
     trans_f = transforms.Compose([transforms.ToTensor(),
                                   transforms.Normalize((0.5, 0.5, 0.5), (0.5, 0.5, 0.5)),
                                   ])
     batch_size = 1000
-    train_set = ColoredBarMNIST(cg=cg, root='../../dat/img', env='train', transform=trans_f)
+    train_set = ColoredBarMNIST(cg=cg, root=args.data_path, env='train', transform=trans_f)
     train_loader = torch.utils.data.DataLoader(train_set, batch_size=batch_size, shuffle=True,
                                                drop_last=True)
 

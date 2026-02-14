@@ -1,3 +1,12 @@
+# =============================================================================
+# Portions of this file are adapted from
+#   NCMCounterfactuals by Kevin Xia & Yushu Pan (MIT License)
+#   https://github.com/CausalAILab/NCMCounterfactuals
+#
+# Copyright (c) 2024 Kevin Xia and Yushu Pan
+# Licensed under the MIT License.
+# =============================================================================
+
 import numpy as np
 import torch as T
 

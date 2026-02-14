@@ -1,13 +1,9 @@
-
 import argparse
 
 from src.colormnistbar.gen.runner import gen_runner
-
 from src.colormnistbar.fi.fi_runner import fi_runner
-
 from src.colormnistbar.ctf_edit_eval import ctf_edit_eval
-
-import torch
+from src.ds.condition_transform import parse_condition_intervention_args
 
 parser = argparse.ArgumentParser(description="Basic Runner")
 
@@ -35,7 +31,15 @@ parser.add_argument('--gpu', help="GPU to use")
 
 parser.add_argument('--eval', action="store_true", help="evaluate the model")
 parser.add_argument('--eval-n', type=int, default=10000, help="number of samples to evaluate")
-
+parser.add_argument(
+    '--condition', '-c', default=None,
+    help="Condition: key=val,key=val e.g. digit=0,digit-color=red,bar-width=thin. "
+         "Keys: digit, digit-color, bar-color, bar-width. Subset ok."
+)
+parser.add_argument(
+    '--intervention', '-do', default=None,
+    help="Intervention (do): key=val,key=val e.g. digit=9. Same keys as condition."
+)
 
 args = parser.parse_args()
 
@@ -79,33 +83,9 @@ if args.eval:
     print("Evaluating the model...")
     m.eval()
 
-    if args.graph == 'full-ncm':
-        condition = {
-            "D": torch.tensor([1, 0, 0, 0, 0, 0, 0, 0, 0, 0]),
-            "C": torch.tensor([1, 0]),
-            "BC": torch.tensor([1, 0]),
-            "BW": torch.tensor([1, 0]),
-        }
-        do = {
-            "D": torch.tensor([0, 0, 0, 0, 0, 0, 0, 0, 1, 0]), 
-            }
-    elif args.graph == 'cls-digit':
-        condition = {
-            "X": torch.tensor([1, 0, 0, 0, 0, 0, 0, 0, 0, 0]),
-            "B": torch.tensor([1, 0]),
-            "Z": torch.tensor([1, 0]),
-        }
-        do = {
-            "X": torch.tensor([0, 0, 0, 0, 0, 0, 0, 0, 1, 0]), 
-        }
-    elif args.graph == 'cls-color':
-        condition = {
-            "B": torch.tensor([1, 0, 0, 0, 0, 0, 0, 0, 0, 0]),
-            "X": torch.tensor([0, 1]),
-        }
-        do = {
-            "X": torch.tensor([1, 0]), 
-        }
+    condition, do = parse_condition_intervention_args(
+        args.condition, args.intervention, args.graph
+    )
 
     ctf_edit_eval(
         m, fi, 
