@@ -86,22 +86,18 @@ This project incorporates and adapts code from the following repositories:
 
 1. **NCM Counterfactuals** by Kevin Xia & Yushu Pan  
    https://github.com/CausalAILab/NCMCounterfactuals  
-   Released under the **MIT License**.
 
 2. **DDPM inversion**  
    https://github.com/inbarhub/DDPM_inversion  
-   Released under the **MIT License**.
 
 3. **DDS** from Google  
    https://github.com/google/prompt-to-prompt/blob/main/DDS_zeroshot.ipynb  
-   Released under the **Apache License 2.0**.
 
 ### License Compliance
 
 - Parts of this project adapt code licensed under the **MIT License** and the **Apache License 2.0**.  
 - Each source retains its original copyright and license notices, which are preserved in this repository.
 
-If you redistribute this code or build on it, please continue to comply with the terms of the respective licenses.
 
 ## Citation
 If you find this code useful, please consider citing our paper:
