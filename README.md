@@ -53,7 +53,7 @@ Example: `-c digit=0,digit-color=red -do digit=9`
 
 Keys: `digit`, `digit-color`, `bar-color`, `bar-width`
 
-### Real-World Scenarios (Sec 5.2)
+### Real-World Scenarios
 
 **(1) Prepare prompts:** Create a JSON file in `dat/prompts/` with the **same base name** as your initial image. For `sunny.png`, create `dat/prompts/sunny.json`:
 
