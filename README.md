@@ -77,7 +77,7 @@ python -m src.stablediffusion.main --initial-image sunny.png
 - `--image-root-path`: Path to initial images (default: `dat/img/RealWorld/`)
 - `--out-path`: Output directory
 - `--num-diffusion-steps`: Number of diffusion steps (default: 200)
-- `--opt-iter`: Optimization iterations per timestep (default: 5)
+- `--opt-iter`: Max optimization iterations per timestep (default: 5)
 
 
 ## Third-Party Code and Acknowledgements
