@@ -1,13 +1,13 @@
 import argparse
 
-from src.colormnistbar.gen.runner import gen_runner
-from src.colormnistbar.fi.fi_runner import fi_runner
-from src.colormnistbar.ctf_edit_eval import ctf_edit_eval
+from src.ncm_cls.gen.runner import gen_runner
+from src.ncm_cls.fi.fi_runner import fi_runner
+from src.ncm_cls.ctf_edit_eval import ctf_edit_eval
 from src.ds.condition_transform import parse_condition_intervention_args
 
 parser = argparse.ArgumentParser(description="Basic Runner")
 
-parser.add_argument('--name', default='colormnistbar', help="name of the experiment")
+parser.add_argument('--name', default='ncm_cls', help="name of the experiment")
 
 parser.add_argument('--max-epoch-gen', type=int, default=200, help="number of epochs at the generative level")
 parser.add_argument('--lr-gen', type=float, default=1e-4, help="optimizer learning rate (default: 1e-4)")

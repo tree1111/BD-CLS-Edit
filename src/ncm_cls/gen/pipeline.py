@@ -9,7 +9,7 @@ from src.ds.cmnistbar_data_loader import ColoredBarMNIST
 from torchvision import datasets, transforms
 from torch.utils.data import TensorDataset, DataLoader
 
-from src.colormnistbar.gen.scm.ncm.gan_ncm import GAN_NCM
+from src.ncm_cls.gen.scm.ncm.gan_ncm import GAN_NCM
 
 from torch.autograd import Variable, grad
 

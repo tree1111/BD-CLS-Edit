@@ -14,8 +14,8 @@ Requirements: Python 3.8+, PyTorch >= 2.0, diffusers >= 0.25.0, transformers >= 
 
 ```text
 ├── src/
-│   ├── colormnistbar/       # Colored MNIST and Bars experiments (Sec 5.1) for ctf-consistent check
-│   ├── stablediffusion/     # Real-world scenario experiments (Sec 5.2)
+│   ├── ncm-cls/             # Colored MNIST and Bars experiments (Sec 5.1) for ctf-consistenty
+│   ├── pretrained/         # Real-world scenario experiments (Sec 5.2)
 │   └── ds/                  # Causal data structure and dataloader
 └── dat/
     ├── cg/                  # Causal diagrams
@@ -36,7 +36,7 @@ python -m src.ds.cmnistbar_data_loader --data-path dat/img
 **(2) Train BD-CLS:**
 
 ```bash
-python -m src.colormnistbar.main --gpu {DEVICE} -G {Graph}
+python -m src.ncm_cls.main --gpu {DEVICE} -G {Graph}
 ```
 
 - `Graph = "full-ncm"`: train the full NCM
@@ -46,7 +46,7 @@ python -m src.colormnistbar.main --gpu {DEVICE} -G {Graph}
 **(3) Evaluate BD-CLS on real-world images (generate initial and counterfactual images):**
 
 ```bash
-python -m src.colormnistbar.main --gpu {DEVICE} -G {Graph} --eval -c {condition} -do {intervention}
+python -m src.ncm_cls.main --gpu {DEVICE} -G {Graph} --eval -c {condition} -do {intervention}
 ```
 
 Example: `-c digit=0,digit-color=red -do digit=9`
@@ -69,7 +69,7 @@ Keys: `digit`, `digit-color`, `bar-color`, `bar-width`
 **(3) Run BD-CLS-Edit:**
 
 ```bash
-python -m src.stablediffusion.main --initial-image sunny.png
+python -m src.pretrained.main --initial-image sunny.png
 ```
 
 **Optional arguments:**

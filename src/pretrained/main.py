@@ -5,7 +5,7 @@ import torch
 import argparse
 import matplotlib.pyplot as plt
 from src.ds.images_utils import load_image, decode
-from src.stablediffusion.bdclsedit import bdclsedit
+from src.pretrained.bdclsedit import bdclsedit
 
 
 parser = argparse.ArgumentParser()

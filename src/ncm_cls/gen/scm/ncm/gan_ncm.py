@@ -12,9 +12,9 @@ import numpy as np
 import torch as T
 import torch.nn as nn
 
-from src.colormnistbar.gen.scm.distribution.continuous_distribution import UniformDistribution, NeuralDistribution
-from src.colormnistbar.gen.scm.ncm.mlp import MLP
-from src.colormnistbar.gen.scm.scm import SCM, expand_do
+from src.ncm_cls.gen.scm.distribution.continuous_distribution import UniformDistribution, NeuralDistribution
+from src.ncm_cls.gen.scm.ncm.mlp import MLP
+from src.ncm_cls.gen.scm.scm import SCM, expand_do
 
 
 class GAN_NCM(SCM):

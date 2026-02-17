@@ -10,7 +10,7 @@ import pytorch_lightning as pl
 
 from src.ds.causal_graph import CausalGraph
 
-from src.colormnistbar.gen.pipeline import Pipeline
+from src.ncm_cls.gen.pipeline import Pipeline
 
 
 def create_trainer(directory, max_epochs, gpu=None):

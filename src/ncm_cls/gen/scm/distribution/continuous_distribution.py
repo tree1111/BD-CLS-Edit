@@ -11,7 +11,7 @@ import numpy as np
 import torch as T
 
 from .distribution import Distribution
-from src.colormnistbar.gen.scm.ncm.mlp import MLP
+from src.ncm_cls.gen.scm.ncm.mlp import MLP
 
 
 class ContinuousDistribution(Distribution):

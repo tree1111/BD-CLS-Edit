@@ -3,8 +3,8 @@ from typing import Tuple, Union, Optional, List
 import torch
 from diffusers import StableDiffusionPipeline, UNet2DConditionModel
 
-from src.stablediffusion.utils import stack_embeddings
-from src.stablediffusion.utils import reverse_step
+from src.pretrained.utils import stack_embeddings
+from src.pretrained.utils import reverse_step
 
 def init_pipe(device, dtype, unet, scheduler) -> Tuple[UNet2DConditionModel, torch.Tensor, torch.Tensor]:
     with torch.inference_mode():

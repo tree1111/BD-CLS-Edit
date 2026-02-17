@@ -1,4 +1,4 @@
-from src.colormnistbar.fi.ddpm import FiPipline
+from src.ncm_cls.fi.ddpm import FiPipline
 import torch
 import os
 

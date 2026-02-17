@@ -6,7 +6,7 @@ from torch.utils.data import DataLoader
 from src.ds.cmnistbar_data_loader import ColoredBarMNIST
 from tqdm import tqdm
 import os
-from src.colormnistbar.fi.models import ContextUnet
+from src.ncm_cls.fi.models import ContextUnet
 
 
 class FiPipline(nn.Module):

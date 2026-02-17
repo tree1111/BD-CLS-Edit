@@ -1,9 +1,9 @@
 import torch
 from tqdm import tqdm
-from src.stablediffusion.utils import encode_text, sample_its_from_i0, get_variance
-from src.stablediffusion.ctfds import CTFDSLoss
+from src.pretrained.utils import encode_text, sample_its_from_i0, get_variance
+from src.pretrained.ctfds import CTFDSLoss
 from torch.optim.sgd import SGD
-from src.stablediffusion.utils import reverse_step, reverse_step_from_it, initialize_theta_t
+from src.pretrained.utils import reverse_step, reverse_step_from_it, initialize_theta_t
 
 
 def u_inference(
