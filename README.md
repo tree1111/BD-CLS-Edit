@@ -15,7 +15,7 @@ Requirements: Python 3.8+, PyTorch >= 2.0, diffusers >= 0.25.0, transformers >= 
 ```text
 ├── src/
 │   ├── ncm-cls/             # Colored MNIST and Bars experiments (Sec 5.1) for ctf-consistenty
-│   ├── pretrained/         # Real-world scenario experiments (Sec 5.2)
+│   ├── pretrained/          # Real-world scenario experiments (Sec 5.2)
 │   └── ds/                  # Causal data structure and dataloader
 └── dat/
     ├── cg/                  # Causal diagrams
